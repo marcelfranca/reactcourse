@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 
-class App extends Component {
+class App {
     state = {
         username: 'supermax'
-    }
+    };
 
     usernameChangedHandler = (event) => {
         this.setState({username: event.target.value});
-    }
+    };
 
     render() {
         return (
