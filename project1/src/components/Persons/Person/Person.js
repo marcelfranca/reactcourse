@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
-// import './Person.css';
+// import './Persons.css';
 
 const StyleDiv = styled.div`
     width: 60%;
@@ -17,12 +17,6 @@ const StyleDiv = styled.div`
 `;
 
 const person = ( props ) => {
-    // const style = {
-    //     '@media (min-width: 500px)': {
-    //         width: '450px'
-    //     }
-    // };
-
     return (
         <StyleDiv>
             <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>

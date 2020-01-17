@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-// import Radium, {StyleRoot} from 'radium'
 import styled from 'styled-components'
-import Person from './Person/Person';
+// import Person from '../components/Persons/Person/Person';
+import Persons from "../components/Persons/Persons";
 
 const StyledButton = styled.button`
     background-color: ${props => props.alt ? 'red': 'green'};
@@ -66,42 +66,17 @@ class App extends Component {
     };
 
     render () {
-        const style = {
-            backgroundColor: 'green',
-            color: 'white',
-            font: 'inherit',
-            border: '1px solid blue',
-            padding: '8px',
-            cursor: 'pointer',
-            ':hover': {
-                backgroundColor: 'lightgreen',
-                color: 'black',
-                // opacity: 0
-            }
-        };
-
         let persons = null;
 
         if (this.state.showPersons) {
             persons = (
                 <div>
-                    {this.state.persons.map((person, index) => {
-                        return <Person
-                            click={() => this.deletePersonHandler(index)}
-                            name={person.name}
-                            age={person.age}
-                            key={person.id}
-                            changed={(event) => this.nameChangedHandler(event, person.id)} />
-                    })}
+                    <Persons
+                    persons={this.state.persons}
+                    clicked={this.deletePersonHandler}
+                    change={this.nameChangedHandler} />
                 </div>
             );
-
-            // style.backgroundColor = 'red';
-            // style[':hover'] = {
-            //     backgroundColor: 'lightgreen',
-            //     color: 'black',
-            //     // opacity: 0
-            // };
         }
 
         const classes = [];
